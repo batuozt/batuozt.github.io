@@ -1,0 +1,19 @@
+# Hugo build artifacts
+/batuozt-website/public/
+/batuozt-website/resources/
+/batuozt-website/.hugo_build.lock
+/batuozt-website/node_modules/
+
+# Old website backup (keep in repo for reference)
+# old_website_backup/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
