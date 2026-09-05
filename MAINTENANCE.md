@@ -1,52 +1,27 @@
-# Website Maintenance Guide
+# Website maintenance
 
-This repository contains a Hugo-based website located in the `batuozt-website` directory.
+The live site is a dependency-free static page served by GitHub Pages from the repository root.
 
-## Building the Website
+## Main files
 
-To build the website locally:
+- `index.html`: content, metadata, and page structure
+- `styles.css`: visual system and responsive layout
+- `assets/portfolio/batu-ozturkler.jpg`: profile photo
+- `assets/portfolio/og.png`: social sharing image
+- `Batu_Ozturkler_Resume.pdf`: primary résumé download
+
+Legacy résumé paths are kept in sync so previously shared links continue to work.
+
+## Preview locally
+
+From the repository root, run:
 
 ```bash
-cd batuozt-website
-pnpm install  # Install dependencies (first time only)
-hugo --minify  # Build the site
+python3 -m http.server 4173
 ```
 
-The generated site will be in `batuozt-website/public/`.
+Then open `http://127.0.0.1:4173/`.
 
-## Deploying to GitHub Pages
+## Publish
 
-To deploy updates to the website:
-
-1. Make changes to content in `batuozt-website/content/`
-2. Build the site: `cd batuozt-website && hugo --minify`
-3. Copy generated files to root: `cp -r batuozt-website/public/* .`
-4. Commit and push changes to the repository
-
-GitHub Pages will automatically serve the site from the root directory.
-
-## Key Directories
-
-- `batuozt-website/content/authors/admin/`: Your profile information
-- `batuozt-website/content/_index.md`: Homepage content
-- `batuozt-website/config/_default/`: Site configuration
-- `batuozt-website/static/`: Static files (PDFs, images, etc.)
-
-## Adding Content
-
-### Update Biography
-Edit `batuozt-website/content/authors/admin/_index.md`
-
-### Update CV
-Replace `batuozt-website/static/Batu_Ozturkler_CV.pdf` with the new PDF
-
-### Add Publications
-Create new markdown files in `batuozt-website/content/publications/`
-
-### Change Profile Photo
-Replace `batuozt-website/content/authors/admin/avatar.jpg`
-
-## Hugo Resources
-
-- Hugo Documentation: https://gohugo.io/documentation/
-- Hugo Blox Documentation: https://docs.hugoblox.com/
+Commit and push changes to `master`. GitHub Pages serves the updated files automatically.
